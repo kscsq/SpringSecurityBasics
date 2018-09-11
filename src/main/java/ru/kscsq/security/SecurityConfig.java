@@ -44,7 +44,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .and()
-                .httpBasic();
+                .httpBasic()
+        .and()
+        .sessionManagement()
+        .maximumSessions(1);
     }
 
 //    @SuppressWarnings("deprecation")

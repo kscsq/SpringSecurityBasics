@@ -61,4 +61,19 @@ public class Users implements UserDetails {
     public void setAuthorities(Set<Authorities> authorities) {
         this.authorities = authorities;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Users users = (Users) o;
+
+        return username != null ? username.equals(users.username) : users.username == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return username != null ? username.hashCode() : 0;
+    }
 }
